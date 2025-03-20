@@ -15,21 +15,21 @@ const DUMMY_POSTS = [
     image: "getting-started-nextjs.png",
     excerpt: "This is another sample post",
     date: "2022-01-02",
-    slug: "getting-started-with-nextjs",
+    slug: "getting-started-with-nextjs2",
   },
   {
     title: "Post 3",
     image: "getting-started-nextjs.png",
     excerpt: "This is yet another sample post",
     date: "2022-01-03",
-    slug: "getting-started-with-nextjs",
+    slug: "getting-started-with-nextjs3",
   },
   {
     title: "Post 4",
     image: "getting-started-nextjs.png",
     excerpt: "This is a sample post",
     date: "2022-01-04",
-    slug: "getting-started-with-nextjs",
+    slug: "getting-started-with-nextjs4",
   },
 ];
 
