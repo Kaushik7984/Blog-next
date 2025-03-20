@@ -8,6 +8,18 @@ const ContactForm = () => {
 
   const sendMessageHandler = (event) => {
     event.preventDefault();
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: enteredName,
+        email: enteredEmail,
+        message: enteredMessage,
+      }),
+    });
   };
 
   return (
