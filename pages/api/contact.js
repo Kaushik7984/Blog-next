@@ -1,7 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const mongoURI =
-  "mongodb+srv://blogapp:blogapp@cluster0.1h7hro3.mongodb.net/blogApp?retryWrites=true&w=majority";
+const mongoURI = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.ntrwp.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
