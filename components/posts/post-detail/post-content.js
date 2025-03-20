@@ -1,21 +1,52 @@
+import Image from "next/image";
 import classes from "./post-content.module.css";
 import PostHeader from "./post-header";
 import ReactMarkdown from "react-markdown";
 
-const DUMMY_POST = {
-  title: "Post 1",
-  slug: "getting-started-with-nextjs",
-  image: "getting-started-nextjs.png",
-  date: "2022-01-01",
-  content: "# This is a first post ",
-};
+const PostContent = (props) => {
+  const { post } = props;
 
-const PostContent = () => {
-  const imagePath = `/images/posts/${DUMMY_POST.slug}/${DUMMY_POST.image}`;
+  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+
+  const customComponents = {
+    img({ src, alt }) {
+      return (
+        <Image
+          src={`/images/posts/${post.slug}/${src}`}
+          alt={alt}
+          width={600}
+          height={300}
+        />
+      );
+    },
+
+    //   paragraph(paragraph) {
+    //     const { node } = paragraph;
+
+    //     if (node.children[0].type === "image") {
+    //       const image = node.children[0];
+
+    //       return (
+    //         <div className={classes.image}>
+    //           <Image
+    //             src={`/images/posts/${post.slug}/${image.url}`}
+    //             alt={image.alt}
+    //             width={600}
+    //             height={300}
+    //           />
+    //         </div>
+    //       );
+    //     }
+    //     return <p>{paragraph.children} </p>;
+    //   },
+  };
+
   return (
     <article className={classes.content}>
-      <PostHeader title={DUMMY_POST.title} image={imagePath} />
-      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
+      <PostHeader title={post.title} image={imagePath} />
+      <ReactMarkdown components={customComponents}>
+        {post.content}
+      </ReactMarkdown>
     </article>
   );
 };
