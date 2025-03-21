@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <title>KT' Blog</title>
+        <title>KT&apos; Blog</title>
         <meta
           name='description'
           content='I post about programming and web development.'
