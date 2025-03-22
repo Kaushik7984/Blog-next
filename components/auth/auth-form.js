@@ -45,18 +45,12 @@ function AuthForm() {
         password: enteredPassword,
       });
 
-      // if (result.error) {
-      //   console.log("Login failed:", result.error);
-      // } else {
-      //   console.log("Login successful:", result);
-      // }
       if (!result.error) {
         router.replace("/profile");
       }
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
-        console.log(result);
       } catch (error) {
         console.log(error);
       }
